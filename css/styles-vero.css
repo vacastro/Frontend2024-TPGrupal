@@ -104,6 +104,19 @@ header{
     font-weight: bolder;
 }
 
+.nabmobile{
+    display: none;
+    width: 18px;
+    height: 2px;
+    transition: width .25s ease;
+}
+
+.fa-bars{
+    color: #FFF;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
 
 
 
@@ -258,4 +271,92 @@ form{
 }
 .row-info{
     padding: 15px;
+}
+
+
+@media (max-width: 1024px) {
+
+    /* RESPONSIVIDAD HEADER  */
+    .navigator {
+        display: none;
+    }
+
+    .nabmobile {
+        display: inline-block;
+        margin-right: auto; 
+    }
+
+    .col-header {
+        display: flex;
+        align-items: center;
+        width: 100%; 
+        justify-content: space-between; 
+    }
+
+    .logo-header {
+        position: absolute; 
+        left: 50%; 
+        transform: translateX(-50%); 
+    }
+
+    .column.empty {
+        display: none; 
+    }
+
+    /* RESPONSIVIDAD FOOTER */
+
+    .column-1 { 
+        display: flex;
+        justify-content: flex-start; 
+        align-items: center;
+        width: 100%; 
+    }
+
+    .column-content {
+        width: 100%;
+    }
+
+    .column:nth-child(2), 
+    .column:nth-child(3) { 
+        display: inline-block;
+        width: 45%; 
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .column:nth-child(2) {
+        align-self: flex-start; 
+    }
+
+    .column:nth-child(3) {
+        align-self: flex-end; 
+    }
+
+    .column-end {
+        width: 100%; 
+        text-align: center; 
+        margin-top: 20px;
+        left: 50%;
+    }
+
+    .column-end .column-content{
+        width: 60%;
+    }
+
+    .redes {
+        margin-top: 20px; 
+    }
+
+}
+
+@media (max-width: 728px) {
+    .column-end .column-content{
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .column-end .column-content{
+        width: 100%;
+    }
 }

@@ -59,8 +59,10 @@
                 <a href="contacto.html">CONTACTO</a>
             </nav>
         </div>
+        <!-- Contenedor principal que cubre el área fuera del menú -->
+        <div class="overlay"></div>
     </div>
-
+    
     <!-- finaliza etiquetas del header  -->
 
     <!-- comienza seccion principal -->
@@ -243,6 +245,16 @@
                 mainHeader.classList.remove("fixed");
             }
         });
+    });
+</script>
+<script>
+    // Seleccionar elementos relevantes
+    const toggler = document.getElementById('toggler');
+    const overlay = document.querySelector('.overlay');
+
+    // Cerrar el menú al hacer clic en el overlay
+    overlay.addEventListener('click', () => {
+        toggler.checked = false; // Desmarcar el checkbox para ocultar el menú
     });
 </script>
 

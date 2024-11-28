@@ -157,7 +157,83 @@ strong{
     font-size: 1.5rem;
 }
 
+.liner{
+    border-bottom: 2px solid #c7a17a;
+    width: 120px;
+    margin: 0 auto;
+}
 
+/*Estilos para el formulario de franquicias*/
+
+.subtitulo{
+    font-size: 1.5rem;
+    line-height: 20px;
+    color: #c7a17a;
+}
+.titulo{
+    font-size: 3rem;
+    line-height: 40px;
+    font-weight: 600;
+    color: #111;
+}
+.parrafo{
+    font-size: 1.5rem;
+}
+
+.form-franq{
+    display: inline;
+    justify-content: center;
+}
+
+.formulario-franquicia {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre columnas */
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.etiqueta-form {
+    margin-bottom: 5px;
+    font-weight: lighter;
+    font-size: 1.2rem;
+}
+
+.input-form {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+button.btn-enviar {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #c7a17a;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+button.btn-enviar:hover {
+    background-color: #a47f5d;
+}
 
 
 
@@ -347,11 +423,19 @@ form{
         margin-top: 20px; 
     }
 
+    
+    
+
 }
 
 @media (max-width: 728px) {
     .column-end .column-content{
         width: 80%;
+    }
+
+    /* Responsividad form*/
+    .form-row {
+        grid-template-columns: 1fr; /* Una sola columna */
     }
 }
 

@@ -189,4 +189,21 @@
 
 </body>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const mainHeader = document.querySelector(".main-header"); // Seleccionar el header principal
+        const headerHeight = mainHeader.offsetHeight; // Calcular la altura inicial del header
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > headerHeight) {
+                mainHeader.classList.add("fixed");
+            } else {
+                mainHeader.classList.remove("fixed");
+            }
+        });
+    });
+</script>
+
+
+
 </html>

@@ -118,6 +118,36 @@ header{
 }
 
 
+/* Estilo del header cuando se fija al hacer scroll */
+header .main-header.fixed {
+    position: fixed;
+    top: 0;
+    height: 60px; /* Altura reducida */
+    background-color: #111;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes del container en el header fijo */
+header .main-header.fixed .container {
+    padding: 5px; /* Reducir márgenes */
+}
+
+header .main-header.fixed .container .row .column .navigator{
+    margin-top: 0px;
+}
+
+header .main-header.fixed .row {
+    height: 60px; /* Reducir márgenes */
+}
+
+/* Ajustar estilos internos cuando el header se achique */
+header .main-header.fixed .logo-header img {
+    height: 40px; /* Cambiar el tamaño del logo, opcional */
+}
+
+header .main-header.fixed .navbar .linkItem {
+    font-size: 14px; /* Reducir tamaño del texto, opcional */
+}
 
 
 /* estilos seccion principal */

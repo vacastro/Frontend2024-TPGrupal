@@ -425,6 +425,53 @@ button.btn-enviar:hover {
     background-color: #a47f5d;
 }
 
+/* estilos para el formulario de contacto*/
+
+.contacto{
+    display: flex;
+    justify-content: space-between; /* Espacio entre ambos bloques */
+    align-items: flex-start; /* Alinea verticalmente al inicio */
+    gap: 20px; /* Espaciado entre bloques */
+}
+
+.formulario-contacto,
+.social-media {
+    flex: 1; /* Ambos bloques ocupan espacio proporcional */
+    max-width: 48%; /* Limita el ancho para evitar que se estiren demasiado */
+}
+
+.social-media .icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-enviar{
+
+    margin-top: 20px;
+}
+
+.social-media .icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    margin-top: 10px;
+}
+
+.social-media .social-icon {
+    color:#111; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+
+.social-icon i{
+    font-size: 3rem;
+}
+
+.social-media .social-icon:hover {
+    color: #0077b5; 
+}
+
 
 
 /* estilos del footer */
@@ -633,6 +680,17 @@ form{
 
     .row-content-tutorial {
         flex-direction: column; /* Cambia el layout a una sola columna */
+    }
+
+/* Responsividad form contacto*/
+    .row-content {
+        flex-direction: column; /* Coloca uno debajo del otro */
+        align-items: center;
+    }
+
+    .formulario-contacto,
+    .social-media {
+        max-width: 100%;
     }
 }
 

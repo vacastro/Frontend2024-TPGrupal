@@ -193,6 +193,97 @@ strong{
     margin: 0 auto;
 }
 
+/* estilos seccion tutoriales con imagenes */
+.tutoriales{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.row-content-tutorial{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.column-tutorial{
+    flex: 0 0 48%; 
+    background: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden; 
+    background-color: #f9f9f9;
+    height: 400px; 
+}
+
+.column-tutorial img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card:hover .card-imagen {
+    transform: scale(1.2); 
+    opacity: 0.8; 
+}
+
+/* Capa de opacidad al hacer hover */
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.3s ease; 
+    z-index: 1; 
+}
+
+.card:hover::after {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Contenido sobre la imagen */
+.card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2; 
+}
+
+.card-content h4 {
+    margin: 0 0 10px; 
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h4 strong{
+    font-size: 3rem;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.card-content .steps {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: underline; 
+    text-decoration-thickness: 2px; 
+    text-decoration-color: #c7a17a; 
+    text-underline-offset: 4px;
+    font-size: 1.3em;
+    transition: background-color 0.3s ease;
+}
+
+
 /*Estilos para el formulario de franquicias*/
 
 .subtitulo{
@@ -223,8 +314,8 @@ strong{
 
 .form-row {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
-    gap: 20px; /* Espacio entre columnas */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
     margin-bottom: 20px;
 }
 
@@ -451,12 +542,10 @@ form{
 
     .redes {
         margin-top: 20px; 
-    }
-
-    
-    
+    }   
 
 }
+
 
 @media (max-width: 728px) {
     .column-end .column-content{
@@ -466,6 +555,15 @@ form{
     /* Responsividad form*/
     .form-row {
         grid-template-columns: 1fr; /* Una sola columna */
+    }
+
+    /* Responsividad de las imagenes de tutoriales*/
+    .column-tutorial {
+        flex: 0 0 100%; /* Cada columna ocupa el 100% del ancho */
+    }
+
+    .row-content-tutorial {
+        flex-direction: column; /* Cambia el layout a una sola columna */
     }
 }
 

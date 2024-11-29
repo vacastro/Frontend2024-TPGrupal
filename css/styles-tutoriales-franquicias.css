@@ -699,3 +699,48 @@ form{
         width: 100%;
     }
 }
+/*style formulario 'mensaje'trabaja con nosotros */
+.mensajeTcn {
+    max-width: 100%;
+    width: 100%;
+    border: 2px solid
+        rgba(129, 129, 129, .2);
+}
+/*style tienda 'nuestro gin' */
+.nuestroGin{
+    width: 70%;
+    max-width: 1200px;
+}
+.info-img{
+    width:100% ;          /* Asegura que ocupe el contenedor */
+    height: 400px;         /* Ajusta al alto del contenedor */
+    object-fit: cover;    /* Recorta y rellena sin deformar */
+    display: block;       /* Elimina márgenes o espacios extra */
+    transition: 0.3s ease; /* Suaviza el cambio */
+}
+
+.info-img:hover {
+    content: url("../img/img14.jpg"); /* Imagen al pasar el mouse */
+}
+.info-img2{
+    width:100% ;          /* Asegura que ocupe el contenedor */
+    height: 400px;         /* Ajusta al alto del contenedor */
+    object-fit: cover;    /* Recorta y rellena sin deformar */
+    display: block;       /* Elimina márgenes o espacios extra */
+    transition: 0.3s ease; /* Suaviza el cambio */
+}
+
+.info-img2:hover {
+    content: url("../img/img15.jpg"); /* Imagen al pasar el mouse */
+}
+.info-img3{
+    width:100% ;          /* Asegura que ocupe el contenedor */
+    height: 400px;         /* Ajusta al alto del contenedor */
+    object-fit: cover;    /* Recorta y rellena sin deformar */
+    display: block;       /* Elimina márgenes o espacios extra */
+    transition: 0.3s ease; /* Suaviza el cambio */
+}
+
+.info-img3:hover {
+    content: url("../img/img16.jpg"); /* Imagen al pasar el mouse */
+}

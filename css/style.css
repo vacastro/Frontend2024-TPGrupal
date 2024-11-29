@@ -1,0 +1,574 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* estilos generales */
+
+* {
+  box-sizing: border-box;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  background-color: #fff;
+  color: #777;
+  text-rendering: optimizeLegibility;
+  font-size: 14px;
+  line-height: 1.6;
+  display: block;
+}
+
+/* estilos del header */
+
+.header-banner {
+  border-bottom: 1px solid #444;
+  height: 40px;
+  background-color: #111111;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.website-wrapper {
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+header {
+  background: #111111;
+  padding-top: 100px;
+  margin-bottom: 40px;
+  display: block;
+}
+
+.main-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 390;
+}
+
+.container {
+  width: 95%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1600px;
+}
+
+.row-header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.navigator {
+  margin-top: 46px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+}
+
+.navbar {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.linkItem:link,
+.linkItem:visited {
+  padding-right: 15px;
+  padding-left: 15px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.nabmobile {
+  display: none;
+  width: 18px;
+  height: 2px;
+  transition: width 0.25s ease;
+}
+
+.fa-bars {
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+/* Estilo del sidebar pantallas */
+
+/* Overlay: capa semitransparente para detectar clics fuera del menú */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 999; /* Justo debajo del menú lateral */
+  pointer-events: none; /* No es interactivo por defecto */
+  transition: background-color 0.3s ease;
+}
+
+/* Mostrar el overlay cuando el menú esté abierto */
+#toggler:checked ~ .overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  pointer-events: all; /* Hacer interactivo */
+}
+
+/* Ocultar el menú y el overlay al hacer clic en el overlay */
+.overlay:active {
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+}
+/* Restablecer el estado del checkbox al hacer clic en el overlay */
+.overlay:active + #toggler {
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+/* Sidebar cerrado */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Oculto fuera de la vista */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Sidebar abierto */
+#toggler:checked ~ .sidebar {
+  left: 0; /* Se despliega */
+}
+
+/* Estilo para los enlaces del menú */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar-nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 10px;
+}
+
+/* Estilo del header cuando se fija al hacer scroll */
+header .main-header.fixed {
+  position: fixed;
+  top: 0;
+  height: 60px; /* Altura reducida */
+  background-color: #111;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes del container en el header fijo */
+header .main-header.fixed .container {
+  padding: 5px; /* Reducir márgenes */
+}
+
+header .main-header.fixed .container .row-header .column .navigator {
+  margin-top: 0px;
+}
+
+header .main-header.fixed .row-header {
+  height: 60px; /* Reducir márgenes */
+}
+
+/* Ajustar estilos internos cuando el header se achique */
+header .main-header.fixed .logo-header img {
+  height: 40px; /* Cambiar el tamaño del logo, opcional */
+}
+
+header .main-header.fixed .navbar .linkItem {
+  font-size: 14px; /* Reducir tamaño del texto, opcional */
+}
+
+/* estilos seccion principal */
+
+.main-page {
+  margin-top: -40px;
+  padding-top: 40px;
+  background-color: #fff;
+}
+
+.site-content {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.main {
+  height: auto;
+}
+article {
+  display: block;
+}
+
+.row-content {
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+strong {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.liner {
+  border-bottom: 2px solid #c7a17a;
+  width: 120px;
+  margin: 0 auto;
+}
+
+/* estilos seccion tutoriales con imagenes */
+.tutoriales {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.row-content-tutorial {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.column-tutorial {
+  flex: 0 0 48%;
+  background: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  height: 400px;
+}
+
+.column-tutorial img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card:hover .card-imagen {
+  transform: scale(1.2);
+  opacity: 0.9;
+}
+
+/* Capa de opacidad al hacer hover */
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.card:hover::after {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Contenido sobre la imagen */
+.card-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.card-content h4 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+h4 strong {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.card-content .steps {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #c7a17a;
+  text-underline-offset: 4px;
+  font-size: 1.3em;
+  transition: background-color 0.3s ease;
+}
+
+
+/* estilos del footer */
+
+.footer-container {
+  background-color: #111111;
+  display: block;
+}
+
+.footer-sidebar {
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.data-row {
+  position: relative;
+  left: 0px;
+  box-sizing: border-box;
+  width: 1023px;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footer-column {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.column-1 {
+  width: 20%;
+}
+.footerTitle:link,
+.footerTitle:visited {
+  color: #c7a17a !important;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.linkFooter {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  height: 3rem;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+.email {
+  display: inline-block;
+  width: calc(100% - 130px);
+  color: #999;
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: transparent;
+  box-shadow: none;
+  height: 42px;
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+.email-submit {
+  background-color: #c7a17a;
+  color: #111;
+  padding: 11px 20px;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+
+.redes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.column-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.img-red {
+  margin: 8px;
+}
+.info {
+  border-top: 1px solid #444;
+}
+
+.datos-curso {
+  text-align: left;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.row-info {
+  padding: 15px;
+}
+
+@media (max-width: 1024px) {
+  /* RESPONSIVIDAD HEADER  */
+  .navigator {
+    display: none;
+  }
+
+  .nabmobile {
+    display: inline-block;
+    margin-right: auto;
+  }
+
+  .col-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .logo-header {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .column.empty {
+    display: none;
+  }
+
+  /* RESPONSIVIDAD FOOTER */
+
+  .column-1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  .column-content {
+    width: 100%;
+  }
+
+  .column:nth-child(2),
+  .column:nth-child(3) {
+    display: inline-block;
+    width: 45%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .column:nth-child(2) {
+    align-self: flex-start;
+  }
+
+  .column:nth-child(3) {
+    align-self: flex-end;
+  }
+
+  .column-end {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    left: 50%;
+  }
+
+  .column-end .column-content {
+    width: 60%;
+  }
+
+  .redes {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 728px) {
+  .column-end .column-content {
+    width: 80%;
+  }
+
+  /* Responsividad form*/
+  .form-row {
+    grid-template-columns: 1fr; /* Una sola columna */
+  }
+
+  /* Responsividad de las imagenes de tutoriales*/
+  .column-tutorial {
+    flex: 0 0 100%; /* Cada columna ocupa el 100% del ancho */
+  }
+
+  .row-content-tutorial {
+    flex-direction: column; /* Cambia el layout a una sola columna */
+  }
+
+  /* Responsividad form contacto*/
+  .row-content {
+    flex-direction: column; /* Coloca uno debajo del otro */
+    align-items: center;
+  }
+
+  .formulario-contacto,
+  .social-media {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .column-end .column-content {
+    width: 100%;
+  }
+}
+
